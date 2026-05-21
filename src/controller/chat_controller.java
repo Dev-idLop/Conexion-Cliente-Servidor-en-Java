@@ -36,7 +36,7 @@ public class chat_controller {
 					while (true) {
 						String mensaje = dataint.readUTF();
 						Platform.runLater(() -> {
-							txt_chat.appendText(mensaje + "\n");
+							txt_chat.appendText("Dispositivo Cliente: " + mensaje + "\n");
 						});		
 					}
 					
@@ -53,7 +53,7 @@ public class chat_controller {
 	public void enviarMensaje() {
 		try {
 			dataout.writeUTF(txt_mensaje.getText());
-			txt_chat.appendText("Yo: " + txt_mensaje.getText() + "\n");
+			txt_chat.appendText("Dispositivo Servidor: " + txt_mensaje.getText() + "\n");
 			txt_mensaje.clear();
 		} catch (Exception e) {
 			// TODO: handle exception
